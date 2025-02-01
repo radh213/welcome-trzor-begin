@@ -1,0 +1,38 @@
+﻿/* Your CSS styles go here */
+
+.biglogo {
+	border: none;
+}
+.readthedocs-flyout {
+    display: none !important;  /* This will hide the flyout button */
+}
+
+.readthedocs-flyout {
+   .container.bottom-right {
+    right: 20px;
+    bottom: 50px;
+    display: none !important;
+}
+}
+
+.rst-versions {
+    display: none !important;
+}
+
+
+.onbtn {
+	background-color: red;
+}
+.tellcss{
+	padding-top: 12px !important;
+	margin-left: 5px !important;
+}
+@media screen and (max-width: 360px) {
+    .getbtn {
+        padding-top: 10px;
+    }
+	.tellcss{
+		padding-top: 20px !important;
+        margin-left: 5px !important;
+	}
+}
