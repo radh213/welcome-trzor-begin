@@ -1,3 +1,35 @@
+# # Configuration file for the Sphinx documentation builder.
+# #
+# # For the full list of built-in configuration values, see the documentation:
+# # https://www.sphinx-doc.org/en/master/usage/configuration.html
+
+# # -- Project information -----------------------------------------------------
+# # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
+
+# project = 'denmak'
+# copyright = '2025, bikag'
+# author = 'bikag'
+
+# # -- General configuration ---------------------------------------------------
+# # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
+
+# extensions = []
+
+# templates_path = ['_templates']
+# exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store'] 
+
+
+
+# # -- Options for HTML output -------------------------------------------------
+# # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
+
+# html_theme = 'alabaster'
+# html_static_path = ['_static']
+
+# def setup(app):
+#     app.add_css_file('css/custom.css')
+
+
 # -*- coding: utf-8 -*-
 #
 # landing-test documentation build configuration file, created by
@@ -38,16 +70,21 @@ extensions = [
 ]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['__templates']
+templates_path = ['_templates']
+
+html_context = {
+    'display_version': False,
+}
+
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 #
 # source_suffix = ['.rst', '.md']
-source_suffix = ['.rst','md']
+source_suffix = ['.rst','.md']
 
 # The master toctree document.
-master_doc = 'contents'
+master_doc = 'index'
 
 # General information about the project.
 project = u'landing-demo'
@@ -87,7 +124,15 @@ todo_include_todos = False
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'sphinx_rtd_thme'
+html_theme_options = {
+    'display_version': False,  # Hides version info
+    'logo_only': True,  # Only show your logo
+    'show_sphinx': False,  # Disable the Read the Docs footer branding
+}
+
+
+
+html_theme = 'sphinx_rtd_theme'
 
 # Theme options are theme-specific and customize the look and feel of a theme
 # further.  For a list of options available for each theme, see the
@@ -98,7 +143,7 @@ html_theme = 'sphinx_rtd_thme'
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_statlc']
+html_static_path = ['_static']
 
 # Custom sidebar templates, must be a dictionary that maps document names
 # to template names.
@@ -115,7 +160,7 @@ html_sidebars = {
     ]
 }
 
-html_additional_pages = {'index': 'Index.html'}
+html_additional_pages = {'index': 'index.html'}
 
 
 # -- Options for HTMLHelp output ------------------------------------------
@@ -175,4 +220,6 @@ texinfo_documents = [
 ]
 
 def setup(app):
-    app.add_css_file('scss/custom.css')
+    app.add_css_file('css/custom.css')
+    app.add_js_file('js/index.js')
+
